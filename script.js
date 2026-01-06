@@ -73,3 +73,38 @@ function showStatus(text) {
 
   statusBox.innerText = text;
 }
+// Load contacts on page load
+document.addEventListener("DOMContentLoaded", loadContacts);
+
+function addContact() {
+  const name = document.getElementById("contactName").value;
+  const phone = document.getElementById("contactPhone").value;
+
+  if (name === "" || phone === "") {
+    alert("Please enter contact name and phone number");
+    return;
+  }
+
+  const contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+
+  contacts.push({ name, phone });
+  localStorage.setItem("contacts", JSON.stringify(contacts));
+
+  document.getElementById("contactName").value = "";
+  document.getElementById("contactPhone").value = "";
+
+  loadContacts();
+}
+
+function loadContacts() {
+  const contactList = document.getElementById("contactList");
+  contactList.innerHTML = "";
+
+  const contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+
+  contacts.forEach(contact => {
+    const li = document.createElement("li");
+    li.textContent = `${contact.name} - ${contact.phone}`;
+    contactList.appendChild(li);
+  });
+}

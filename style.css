@@ -91,3 +91,24 @@ body {
   margin-top: 30px;
   background: #f8bbd0;
 }
+.add-contact-section input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-contact-section button {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.add-contact-section button:hover {
+  background: #c2185b;
+}
