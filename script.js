@@ -108,3 +108,8 @@ function loadContacts() {
     contactList.appendChild(li);
   });
 }
+sendSMS("9876543210", "Emergency! I need help. Please contact me.");
+function sendSMS(phone, message) {
+  const smsLink = `sms:${phone}?body=${encodeURIComponent(message)}`;
+  window.location.href = smsLink;
+}
