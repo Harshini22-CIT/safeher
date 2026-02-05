@@ -1,0 +1,8 @@
+{
+  "name": "SafeHer - Predictive Community Safety",
+  "description": "A modern, predictive women's safety application focused on community-based protection, smart check-ins, and proactive risk assessment.",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera"
+  ]
+}
